@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows7.0</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier> <!-- 👈 Important for IIS -->
+    <SelfContained>false</SelfContained> <!-- If using framework-dependent publish -->
+    <PublishTrimmed>false</PublishTrimmed> <!-- Avoid trimming -->
+    <RootNamespace>ASKPA-API</RootNamespace>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <Title>ASKPA RESFULL API PROJECT</Title>
+    <Version>2025-01-01-001</Version>
+    <Authors>ASKPA Development Team</Authors>
+    <Company>ASKPA LLP, Howrah</Company>
+    <Product>ASKPA-API</Product>
+    <Description>Artha Sankalpa reserves all the copyright of this API Project and all this intellectualProperty 2025.</Description>
+    <Copyright>ASKPA Copyright @</Copyright>
+    <PackageProjectUrl>deployed at own private VPS Server </PackageProjectUrl>
+    <PackageIcon>Coming soon with trademark</PackageIcon>
+    <PackageReadmeFile>NO Readme right now</PackageReadmeFile>
+    <RepositoryUrl>Github.com</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>ASKPA</PackageTags>
+    <PackageReleaseNotes>For Intertal Purpose Development</PackageReleaseNotes>
+    <AssemblyVersion>2025.1001</AssemblyVersion>
+    <FileVersion>2025.2001</FileVersion>
+    <UseWindowsForms>true</UseWindowsForms> <!-- Required for GDI+ -->
+      </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="UploadEmpFiles\**" />
+    <Compile Remove="UploadExpFiles\**" />
+    <Compile Remove="Views\**" />
+    <Content Remove="UploadEmpFiles\**" />
+    <Content Remove="UploadExpFiles\**" />
+    <Content Remove="Views\**" />
+    <EmbeddedResource Remove="UploadEmpFiles\**" />
+    <EmbeddedResource Remove="UploadExpFiles\**" />
+    <EmbeddedResource Remove="Views\**" />
+    <None Remove="UploadEmpFiles\**" />
+    <None Remove="UploadExpFiles\**" />
+    <None Remove="Views\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\Keys\private.key" />
+    <Content Remove="wwwroot\Keys\public.key" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.105.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\UploadExpFiles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Keys\private.key" />
+    <None Include="wwwroot\Keys\public.key" />
+  </ItemGroup>
+
+</Project>
