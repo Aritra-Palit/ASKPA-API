@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Mendine_CRM_API": {
+    "ASKPA_ADMIN_API": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
