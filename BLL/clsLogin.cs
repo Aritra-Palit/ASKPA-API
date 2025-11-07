@@ -65,6 +65,8 @@ namespace ASKPA.API.BLL
                 obj.CompanyAddress = dr["CompanyAddress"].ToString();
                 obj.CompanyMobile = dr["CompanyMobile"].ToString();
                 obj.CompanyEmail = dr["CompanyEmail"].ToString();
+                obj.DashboardURL = dr["DashboardURL"].ToString();
+                obj.APIURL = dr["APIURL"].ToString();
                 obj.CompanyHexKey = dr["CompanyHexKey"].ToString();
                 obj.Result = "Success";
             }

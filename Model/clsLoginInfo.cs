@@ -44,6 +44,8 @@ namespace ASKPA.API.Model
         public string CompanyAddress { get; set; } = "";
         public string CompanyMobile { get; set; } = "";
         public string CompanyEmail { get; set; } = "";
+        public string DashboardURL { get; set; } = "";
+        public string APIURL { get; set; } = "";
         public string CompanyHexKey { get; set; } = "";
 
     }
