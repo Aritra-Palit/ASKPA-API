@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ASKPA_API.Controllers.Admin
 {
-    [Route("api/crm")]
+    [Route("askpa/admin")]
     [ApiController]
     public class LoginController : ControllerBase
     {

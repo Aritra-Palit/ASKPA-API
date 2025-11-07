@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace ASKPA_API.Controllers
 {
-    [Route("api/crm")]
+    [Route("askpa/admin")]
     [ApiController]
     public class TestController : ControllerBase
     {

@@ -3,7 +3,7 @@ using System.IO;
 
 namespace ASKPA_API.Controllers
 {
-    [Route("api/crm")]
+    [Route("askpa/admin")]
     [ApiController]
     public class CryptoController : ControllerBase
     {
