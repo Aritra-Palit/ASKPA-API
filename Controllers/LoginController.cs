@@ -63,7 +63,8 @@ namespace ASKPA_API.Controllers.Admin
         [Route("Login/ValidateLogin")]
         public async Task<IActionResult> Login_Validation(clsLoginInfo info)
         {
-            clsLoginResultInfo d = await clsLogin.Login_Validation(AdminConnectionString, info);
+            string connection = HttpContext.Items["AdminConnection"] as string;
+            clsLoginResultInfo d = await clsLogin.Login_Validation(connection, info);
             return Ok(new { data = d });
         }
     }
