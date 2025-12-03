@@ -18,7 +18,7 @@ namespace ASKPA.API.BLL
                 {
                     new SqlParameter("@BusinessId", businessId ?? "")
                 };
-                var result = await clsHelperDB.DBListAsync<clsBusinessInfo>(connectionString, "CRM_Services_Business_Detail", parameters);
+                var result = await clsHelperDB.DBListAsync<clsBusinessInfo>(connectionString, "ASKPA_BusinessDetails", parameters);
                 return result.FirstOrDefault() ?? new clsBusinessInfo();
             }
             catch (Exception)

@@ -23,4 +23,9 @@
         public int Active { get; set; } = 0;
         public int Demo { get; set; } = 0;
     }
+    public class clsConfigList
+    {
+        public long IDCompany { get; set; } = 0;
+        public string MerchantCode { get; set; } = "";
+    }
 }

@@ -2,6 +2,7 @@
 using ASKPA_API.Model;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 namespace ASKPA_API.Controllers
 {
@@ -17,5 +18,16 @@ namespace ASKPA_API.Controllers
             var no = await clsCompany.NewCompany(connection, info);
             return Ok(new { MerchantNumber = no });
         }
+
+        [HttpGet]
+        [Route("company/list")]
+        public async Task<IActionResult> Company_List()
+        {
+            string businessConnection = HttpContext.Items["CompanyConnection"] as string;
+            List<clsConfigList> d = await clsCompany.Company_List(businessConnection);
+            return Ok(new { data = d });
+        }
+
+
     }
 }
