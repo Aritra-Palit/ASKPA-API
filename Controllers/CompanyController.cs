@@ -24,7 +24,15 @@ namespace ASKPA_API.Controllers
         public async Task<IActionResult> Company_List()
         {
             string businessConnection = HttpContext.Items["CompanyConnection"] as string;
-            List<clsConfigList> d = await clsCompany.Company_List(businessConnection);
+            List<clsCompanyList> d = await clsCompany.Company_List(businessConnection);
+            return Ok(new { data = d });
+        }
+        [HttpGet]
+        [Route("company/config")]
+        public async Task<IActionResult> Config_List(int IDCompany)
+        {
+            string businessConnection = HttpContext.Items["CompanyConnection"] as string;
+            List<clsConfigList> d = await clsCompany.Config_List(businessConnection, IDCompany);
             return Ok(new { data = d });
         }
 
