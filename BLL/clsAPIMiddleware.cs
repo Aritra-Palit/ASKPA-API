@@ -70,7 +70,7 @@ namespace ASKPA.BLL
                             cmd.Parameters.AddWithValue("@UserAgent", userAgent ?? "");
                             cmd.Parameters.AddWithValue("@IPAddress", ip ?? "");
                             cmd.Parameters.AddWithValue("@Execution", stopwatch.ElapsedMilliseconds);
-                            cmd.Parameters.AddWithValue("@Company", stopwatch.ElapsedMilliseconds);
+                            cmd.Parameters.AddWithValue("@Company", businessId);
 
                             await cmd.ExecuteNonQueryAsync();
                         }
