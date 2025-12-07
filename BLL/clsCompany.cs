@@ -43,6 +43,7 @@ namespace ASKPA_API.BLL
             foreach (DataRow dr in dt.Rows)
             {
                 clsConfigList obj = new clsConfigList();
+                obj.IDConfig = clsHelperDBUtility.fnConvert2Long(dr["IDConfig"]);
                 obj.Twostep = clsHelperDBUtility.fnConvert2Int(dr["Twostep"]);
                 obj.NoofUsers = clsHelperDBUtility.fnConvert2Long(dr["NoofUsers"]);
                 obj.OtpTimer = clsHelperDBUtility.fnConvert2Long(dr["OtpTimer"]);
@@ -61,6 +62,14 @@ namespace ASKPA_API.BLL
                 mList.Add(obj);
             }
             return mList;
+        }
+
+        public static async Task<string> NewConfig(string CompanyConnection, clsNewConfigList info)
+        {
+            return await clsHelperDBAsync.fnDBOperationAsync(CompanyConnection, "PRC_ConfigAddEdit",
+               info.IDConfig, info.IDCompany, info.Twostep, info.NoofUsers, info.OtpTimer, info.S_Email,
+               info.S_Phone, info.S_Whatsapp, info.VersionName, info.FolderName, info.StartDate, info.EndDate,
+               info.NotificationDate, info.RenewDate, info.LastRenewDate, info.DashboardURL, info.APIURL);
         }
 
     }

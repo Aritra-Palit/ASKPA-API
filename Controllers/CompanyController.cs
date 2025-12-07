@@ -35,7 +35,14 @@ namespace ASKPA_API.Controllers
             List<clsConfigList> d = await clsCompany.Config_List(businessConnection, IDCompany);
             return Ok(new { data = d });
         }
-
+        [HttpPost]
+        [Route("company/newconfig")]
+        public async Task<IActionResult> NewConfigDetails(clsNewConfigList info)
+        {
+            string connection = HttpContext.Items["CompanyConnection"] as string;
+            var no = await clsCompany.NewConfig(connection, info);
+            return Ok(new { Result = no });
+        }
 
     }
 }
